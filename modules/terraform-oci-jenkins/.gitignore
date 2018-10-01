@@ -1,0 +1,24 @@
+.terraform
+*.tfstate
+*.tfstate.backup
+.DS_Store
+
+# intellij
+*.iml
+*.ipr
+*.iws
+.idea
+
+
+**/.terraform
+**/terraform.tfstate
+**/terraform.tfstate.backup
+**/terraform.tfstate.lock.info
+.terraform.tfstate.lock.info
+
+#terraform.tfvars
+terraform.tfstate
+terraform.tfstate.backup
+generated/**
+
+*.log
