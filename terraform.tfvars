@@ -12,7 +12,11 @@ tenancy_ocid="ocid1.tenancy.oc1..aaaaaaaaej42v3hufhtwz7ssrsynoslc7eunq2nrkepvqjh
 
 # IAM
 user_ocid="ocid1.user.oc1..aaaaaaaabdym3x2s3zhuumgzbp6tkgawk2l2lcxnkskgcnbq5fsve5ak25ba"
+
+#codeone-mgmt
 #compartment_ocid="ocid1.compartment.oc1..aaaaaaaat2axyzcauvxp4jcaco7mvu7zbeuot72gqaufb3ydbjbd7dbvfaxq"
+
+#orm-demo
 compartment_ocid="ocid1.compartment.oc1..aaaaaaaap6w5spmp62dq35zk7nkby5jiizchbg42l56dz6lfovefjzx4n5xq"
 
 #Jenkins
