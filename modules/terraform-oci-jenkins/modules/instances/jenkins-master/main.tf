@@ -33,32 +33,28 @@ resource "oci_core_instance" "TFJenkinsMaster" {
     source_type = "image"
   }
 
-  provisioner "file" {
-    connection = {
-      host        = "${self.public_ip}"
-      agent       = false
-      timeout     = "5m"
-      user        = "opc"
-      private_key = "${file("${var.ssh_private_key}")}"
-    }
+  connection {
+    host        = "${self.public_ip}"
+    agent       = false
+    timeout     = "5m"
+    user        = "opc"
+    private_key = "${file("${var.ssh_private_key}")}"
+  }
 
+  provisioner "file" {
     content     = "${data.template_file.setup_jenkins.rendered}"
     destination = "/tmp/setup.sh"
   }
 
   provisioner "remote-exec" {
-    connection = {
-      host        = "${self.public_ip}"
-      agent       = false
-      timeout     = "5m"
-      user        = "opc"
-      private_key = "${file("${var.ssh_private_key}")}"
-    }
-
     inline = [
       "chmod +x /tmp/setup.sh",
       "sudo /tmp/setup.sh",
     ]
+  }
+
+  provisioner "local-exec" {
+    command = "ansible -i ${oci_core_instance.TFJenkinsMaster.public_ip}, -u opc -b -m fetch -a \"src=/var/lib/jenkins/secrets/initialAdminPassword dest=./initialAdminPassword flat=yes\" all"
   }
 
   timeouts {
