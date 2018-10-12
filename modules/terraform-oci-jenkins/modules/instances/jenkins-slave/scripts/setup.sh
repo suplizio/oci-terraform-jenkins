@@ -19,7 +19,7 @@ wget -P /tmp ${jenkins_master_url}/jnlpJars/slave.jar
 sudo mv /tmp/slave.jar /home/jenkins/jenkins-slave/
 
 # CodeOne demo
-sudo yum install -y terraform terraform-provider-oci git
+sudo yum install -y terraform terraform-provider-oci git ansible
 sudo -u opc ssh-keygen -t rsa -b 4096 -N "" -f /home/opc/.ssh/id_rsa
 chown opc:opc /home/opc/.ssh/id_rsa
 chmod 0600 /home/opc/.ssh/id_rsa
