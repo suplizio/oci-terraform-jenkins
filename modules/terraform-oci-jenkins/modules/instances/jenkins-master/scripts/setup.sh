@@ -81,7 +81,7 @@ sudo java -jar /var/lib/jenkins/jenkins-cli.jar -s http://localhost:${http_port}
 sudo java -jar /var/lib/jenkins/jenkins-cli.jar -s http://localhost:${http_port} -auth admin:$PASS restart
 
 # CodeOne demo
-sudo yum install -y terraform terraform-provider-oci git
+sudo yum install -y terraform terraform-provider-oci git ansible
 sudo -u opc ssh-keygen -t rsa -b 4096 -N "" -f /home/opc/.ssh/id_rsa
 chown opc:opc /home/opc/.ssh/id_rsa
 chmod 0600 /home/opc/.ssh/id_rsa
@@ -92,3 +92,5 @@ sudo -u jenkins ssh-keyscan -t rsa github.com >> /var/lib/jenkins/.ssh/known_hos
 sudo chown jenkins:jenkins /var/lib/jenkins/.ssh/id_rsa
 sudo chown jenkins.jenkins /var/lib/jenkins/.ssh/known_hosts
 sudo chmod 0600 /var/lib/jenkins/.ssh/id_rsa
+sudo cat /var/lib/jenkins/.ssh/id_rsa.pub >> /home/opc/sshJenkinsPublicKey
+sudo chown opc:opc /home/opc/sshJenkinsPublicKey
