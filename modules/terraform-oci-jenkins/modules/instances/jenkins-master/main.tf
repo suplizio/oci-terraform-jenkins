@@ -54,11 +54,11 @@ resource "oci_core_instance" "TFJenkinsMaster" {
   }
 
   provisioner "local-exec" {
-    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible -i ${oci_core_instance.TFJenkinsMaster.public_ip}, -u jenkins -b -m fetch -a 'src=/var/lib/jenkins/secrets/initialAdminPassword dest=./initialAdminPassword flat=yes' all"
+    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible -i ${oci_core_instance.TFJenkinsMaster.public_ip}, -u opc -b -m fetch -a 'src=/var/lib/jenkins/secrets/initialAdminPassword dest=./initialAdminPassword flat=yes' all"
   }
 
   provisioner "local-exec" {
-    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible -i ${oci_core_instance.TFJenkinsMaster.public_ip}, -u jenkins -b -m fetch -a 'src=/var/lib/jenkins/.ssh/id_rsa.pub dest=./jenkinsPublicKey flat=yes' all"
+    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible -i ${oci_core_instance.TFJenkinsMaster.public_ip}, -u opc -b -m fetch -a 'src=/var/lib/jenkins/.ssh/id_rsa.pub dest=./jenkinsPublicKey flat=yes' all"
   }
 
   timeouts {
