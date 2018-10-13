@@ -90,7 +90,14 @@ sudo -u jenkins mkdir /var/lib/jenkins/.ssh
 sudo -u jenkins ssh-keygen -t rsa -b 4096 -N "" -f /var/lib/jenkins/.ssh/id_rsa
 sudo -u jenkins ssh-keyscan -t rsa github.com >> /var/lib/jenkins/.ssh/known_hosts
 sudo chown jenkins:jenkins /var/lib/jenkins/.ssh/id_rsa
-sudo chown jenkins.jenkins /ttvar/lib/jenkins/.ssh/known_hosts
+sudo chown jenkins.jenkins /var/lib/jenkins/.ssh/known_hosts
 sudo chmod 0600 /var/lib/jenkins/.ssh/id_rsa
-sudo cat /var/lib/jenkins/.ssh/id_rsa.pub >> /home/opc/sshJenkinsPublicKey
-sudo chown opc:opc /home/opc/sshJenkinsPublicKey
+sudo cat /var/lib/jenkins/.ssh/id_rsa.pub >> /home/opc/jenkinsPublicKey
+sudo chown opc:opc /home/opc/jenkinsPublicKey
+
+sudo mkdir /var/lib/jenkins/workspace/
+sudo mkdir /var/lib/jenkins/workspace/tf_state_files
+sudo chown -R jenkins:jenkins /var/lib/jenkins/workspace/
+sudo chown -R jenkins:jenkins /var/lib/jenkins/workspace/tf_state_files
+
+
