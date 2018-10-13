@@ -2,7 +2,7 @@
 *.tfstate
 *.tfstate.backup
 .DS_Store
-*.local
+*.tfvars.local
 
 # intellij
 *.iml
