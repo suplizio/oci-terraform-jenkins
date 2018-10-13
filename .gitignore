@@ -1,3 +1,6 @@
+initialAdminPassword
+jenkinsPublicKey
+terraform.tfvars.local
 .terraform
 *.tfstate
 *.tfstate.backup
@@ -8,8 +11,6 @@
 *.ipr
 *.iws
 .idea
-initialAdminPassword
-
 
 **/.terraform
 **/terraform.tfstate

@@ -96,6 +96,6 @@ sudo chmod 0600 /var/lib/jenkins/.ssh/id_rsa
 sudo mkdir /var/lib/jenkins/workspace/
 sudo mkdir /var/lib/jenkins/workspace/tf_state_files
 sudo chown -R jenkins:jenkins /var/lib/jenkins/workspace/
-sudo chown -R jenkins:jenkins /var/lib/jenkins/workspace/tf_state_files
+sudo chown -R jenkins:jenkins /var/lib/jenkins/workspace/tf_files
 
 
