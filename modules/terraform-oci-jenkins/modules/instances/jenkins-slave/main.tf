@@ -117,4 +117,7 @@ resource "oci_core_instance" "TFJenkinsSlave" {
       "/tmp/config_slave.sh ${self.display_name}",
     ]
   }
+  provisioner "local-exec" {
+    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible -i ${oci_core_instance.TFJenkinsSlave.public_ip}, -u opc -b -m fetch -a 'src=/var/lib/jenkins/.ssh/id_rsa.pub dest=./jenkinsSlavePublicKey flat=yes' all"
+  }
 }
