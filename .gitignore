@@ -1,5 +1,6 @@
 JenkinsMasterAdminPassword
 JenkinsMasterPublicKey
+JenkinsSlavePublicKey
 terraform.tfvars.local
 .terraform
 *.tfstate
