@@ -1,5 +1,5 @@
-initialAdminPassword
-jenkinsPublicKey
+JenkinsMasterAdminPassword
+JenkinsMasterPublicKey
 terraform.tfvars.local
 .terraform
 *.tfstate

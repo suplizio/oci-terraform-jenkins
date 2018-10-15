@@ -97,5 +97,3 @@ sudo mkdir /var/lib/jenkins/workspace/
 sudo mkdir /var/lib/jenkins/workspace/tf_files
 sudo chown -R jenkins:jenkins /var/lib/jenkins/workspace/
 sudo chown -R jenkins:jenkins /var/lib/jenkins/workspace/tf_files
-
-
