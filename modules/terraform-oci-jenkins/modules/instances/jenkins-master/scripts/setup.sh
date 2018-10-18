@@ -94,6 +94,8 @@ sudo chown jenkins.jenkins /var/lib/jenkins/.ssh/known_hosts
 sudo chmod 0600 /var/lib/jenkins/.ssh/id_rsa
 
 sudo mkdir /var/lib/jenkins/workspace/
+sudo mkdir /var/lib/jenkins/workspace/plan
 sudo mkdir /var/lib/jenkins/workspace/tf_files
 sudo chown -R jenkins:jenkins /var/lib/jenkins/workspace/
+sudo chown -R jenkins:jenkins /var/lib/jenkins/workspace/plan
 sudo chown -R jenkins:jenkins /var/lib/jenkins/workspace/tf_files
